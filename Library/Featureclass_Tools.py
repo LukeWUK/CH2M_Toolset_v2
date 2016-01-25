@@ -9,9 +9,11 @@ import arcpy.da
 def get_unique_field_values(table, field, where=None):
     if where is None:
         where = "1=1"
+        #j
 
     data = arcpy.da.TableToNumPyArray(table, [field], where_clause=where)
     return numpy.unique(data[field])
+
 
 
 
